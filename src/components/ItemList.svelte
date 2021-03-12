@@ -1,5 +1,5 @@
 <script>
-  import { formatPrice } from "./helper";
+  import { formatPrice } from "../helper";
 
   export let items;
 </script>
