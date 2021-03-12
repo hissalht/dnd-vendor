@@ -1,7 +1,9 @@
 <script>
   import NewItem from "./NewItem.svelte";
   import ItemList from "./ItemList.svelte";
+  import firebase from "./firebase";
 
+  let shopName = "";
   let items = [
     {
       name: "Food ration",
@@ -36,8 +38,12 @@
     items = [...items, e.detail];
   }
 
-  $: {
-    console.log(items);
+  function handleCreateShop() {
+    console.log("Creating shop with name", shopName, "and items", items);
+    firebase.firestore().collection("shops").doc().set({
+      name: shopName,
+      items,
+    });
   }
 </script>
 
@@ -50,7 +56,7 @@
 <div class="flow" on:submit|preventDefault>
   <div>
     <label for="shop-name">Shop's name</label>
-    <input id="shop-name-input" name="shop-name" />
+    <input id="shop-name-input" name="shop-name" bind:value={shopName} />
   </div>
 
   <NewItem on:newitem={handleNewItem} />
@@ -58,6 +64,6 @@
   <ItemList {items} />
 
   <div>
-    <button type="submit">Create</button>
+    <button type="submit" on:click={handleCreateShop}>Create</button>
   </div>
 </div>
