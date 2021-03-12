@@ -1,7 +1,7 @@
 <script>
   import { createEventDispatcher } from "svelte";
 
-  import { formatPrice } from "../helper";
+  import ItemPrice from "./ItemPrice.svelte";
 
   const dispatch = createEventDispatcher();
 
@@ -33,7 +33,9 @@
     {#each items as item, i}
       <tr>
         <td>{item.name}</td>
-        <td>{formatPrice(item.price)}</td>
+        <td>
+          <ItemPrice price={item.price} />
+        </td>
         {#if editable}
           <td class="action">
             <button data-index={i} on:click={handleRemove}>X</button></td
