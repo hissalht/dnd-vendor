@@ -2,6 +2,7 @@
   import { createEventDispatcher } from "svelte";
 
   import ItemPrice from "./ItemPrice.svelte";
+  import MinimalModeToggle from "./MinimalModeToggle.svelte";
 
   const dispatch = createEventDispatcher();
 
@@ -16,6 +17,7 @@
   }
 </script>
 
+<MinimalModeToggle />
 <table>
   <thead>
     <tr>

@@ -23,6 +23,8 @@
 
 {#if shop}
   <h2>{shop.name}</h2>
+
   <Link to={`/?copy&id=${shopId}`}>Copy and edit this shop</Link>
+
   <ItemList items={shop.items} />
 {/if}

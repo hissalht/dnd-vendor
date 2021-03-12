@@ -6,11 +6,12 @@
 </script>
 
 <Router>
-  <h1>D&D Vendor App</h1>
-
-  <nav>
-    <Link to="/">Shop editor</Link>
-  </nav>
+  <header>
+    <h1>D&D Vendor App</h1>
+    <nav>
+      <Link to="/">Shop editor</Link>
+    </nav>
+  </header>
 
   <main>
     <Route path="/" component={CreateShop} />
