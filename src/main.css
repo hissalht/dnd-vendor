@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap');
+
+:root {
+  font-family: 'Recursive', sans-serif;
+}
+
+body {
+  padding: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+input,
+select {
+  padding: 0.25rem 0.5rem;
+}
+
+.flow > * + * {
+  margin-top: var(--flow, 0.5rem);
+}
