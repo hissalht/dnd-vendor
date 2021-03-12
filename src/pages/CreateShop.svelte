@@ -6,32 +6,7 @@
   import firebase from "../firebase";
 
   let shopName = "";
-  let items = [
-    {
-      name: "Food ration",
-      price: 123,
-    },
-    {
-      name: "Food ration",
-      price: 300,
-    },
-    {
-      name: "Big Sword",
-      price: 5000,
-    },
-    {
-      name: "Big Sword on sale",
-      price: 4009,
-    },
-    {
-      name: "Pen",
-      price: 5,
-    },
-    {
-      name: "One gold",
-      price: 100,
-    },
-  ];
+  let items = [];
 
   /**
    * @param {CustomEvent} e
