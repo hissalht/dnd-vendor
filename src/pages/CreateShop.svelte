@@ -9,7 +9,12 @@
   export let location;
 
   let shopName = "";
-  let items = [];
+  let items = [
+    {
+      name: "Thing",
+      price: 999,
+    },
+  ];
 
   onMount(() => {
     const search = location.search.slice(1);

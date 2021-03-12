@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap');
 
 :root {
+  --background-color: #eeffee;
+  --accent-color: #b8336a;
+  --text-color: #000;
+  --error-color: red;
+
   font-family: 'Recursive', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1.25rem;
 }
 
-body {
-  padding: 1rem;
+a,
+h1,
+h2,
+h3,
+h4 {
+  color: var(--accent-color);
 }
 
 label {
@@ -21,4 +33,31 @@ select {
 
 .flow > * + * {
   margin-top: var(--flow, 0.5rem);
+}
+
+.flow-h > * + * {
+  margin-left: var(--flow, 0.5rem);
+}
+
+input {
+  border: 0.1rem solid var(--accent-color);
+  color: var(--text-color);
+  outline: none;
+}
+
+input:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+input:focus {
+  box-shadow: 0 0 0 0.1rem var(--accent-color);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
 }
