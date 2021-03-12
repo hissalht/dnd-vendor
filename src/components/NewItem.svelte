@@ -24,12 +24,7 @@
 
   <div>
     <label for="item-price-input">Price</label>
-    <input
-      id="item-price-input"
-      bind:value={price}
-      required
-      pattern="^(\d+)(\s*)\w$"
-    />
+    <input id="item-price-input" bind:value={price} required type="number" />
     <!-- TODO: add currency selector -->
   </div>
 

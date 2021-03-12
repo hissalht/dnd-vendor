@@ -8,11 +8,14 @@
   let shopName = "";
   let items = [];
 
-  /**
-   * @param {CustomEvent} e
-   */
   function handleNewItem(e) {
     items = [...items, e.detail];
+  }
+
+  function handleRemoveItem(e) {
+    const itemIndex = e.detail.index;
+    items.splice(itemIndex, 1);
+    items = items;
   }
 
   function handleCreateShop() {
@@ -42,7 +45,7 @@
 
   <NewItem on:newitem={handleNewItem} />
 
-  <ItemList {items} />
+  <ItemList {items} editable on:removeitem={handleRemoveItem} />
 
   <div>
     <button type="submit" on:click={handleCreateShop}>Create</button>
