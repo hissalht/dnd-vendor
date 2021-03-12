@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { Link } from "svelte-routing";
 
   import firebase from "../firebase";
   import ItemList from "../components/ItemList.svelte";
@@ -22,5 +23,6 @@
 
 {#if shop}
   <h2>{shop.name}</h2>
+  <Link to={`/?copy&id=${shopId}`}>Copy and edit this shop</Link>
   <ItemList items={shop.items} />
 {/if}

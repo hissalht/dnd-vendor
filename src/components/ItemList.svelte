@@ -35,7 +35,9 @@
         <td>{item.name}</td>
         <td>{formatPrice(item.price)}</td>
         {#if editable}
-          <td><button data-index={i} on:click={handleRemove}>X</button></td>
+          <td class="action">
+            <button data-index={i} on:click={handleRemove}>X</button></td
+          >
         {/if}
       </tr>
     {/each}
@@ -60,5 +62,13 @@
   .empty {
     padding: 0;
     border: none;
+    background-color: transparent;
+  }
+
+  .action {
+    padding: 0;
+  }
+  .action button {
+    padding: 0.25rem 0.5rem;
   }
 </style>
