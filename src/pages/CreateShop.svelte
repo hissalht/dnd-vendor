@@ -1,4 +1,6 @@
 <script>
+  import { navigate } from "svelte-routing";
+
   import NewItem from "../components/NewItem.svelte";
   import ItemList from "../components/ItemList.svelte";
   import firebase from "../firebase";
@@ -40,10 +42,16 @@
 
   function handleCreateShop() {
     console.log("Creating shop with name", shopName, "and items", items);
-    firebase.firestore().collection("shops").doc().set({
-      name: shopName,
-      items,
-    });
+    firebase
+      .firestore()
+      .collection("shops")
+      .add({
+        name: shopName,
+        items,
+      })
+      .then((document) => {
+        navigate(`/${document.id}`);
+      });
   }
 </script>
 
